@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud Vegetal IA - Maíz</title>
+    <!-- Importamos TensorFlow.js directamente -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 500px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        img { max-width: 100%; max-height: 300px; margin-top: 15px; border-radius: 8px; display: none; }
+        .result-box { margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 8px; text-align: left; display: none; }
+        button { background-color: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        button:disabled { background-color: #cccccc; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🌽 Análisis de Salud Foliar (Maíz)</h2>
+        <p>Sube una foto de la hoja para evaluar su estado.</p>
+        
+        <input type="file" id="imageUpload" accept="image/*">
+        <br>
+        <img id="imagePreview" alt="Vista previa de la hoja">
+        <br>
+        <button id="predictBtn" disabled>Analizar Hoja</button>
+        
+        <div class="result-box" id="resultBox">
+            <h3 style="margin-top: 0;">Resultados del Análisis:</h3>
+            <p><strong>Clase Probable:</strong> <span id="resClass">Procesando...</span></p>
+            <p><strong>Severidad (0 a 1):</strong> <span id="resSeverity">-</span></p>
+            <p><strong>Índice de Salud Foliar:</strong> <span id="resHealth">-</span>/100</p>
+        </div>
+    </div>
+
+    <!-- Importamos nuestro script lógico -->
+    <script src="app.js"></script>
+</body>
+</html>
